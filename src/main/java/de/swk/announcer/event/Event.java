@@ -1,11 +1,11 @@
-package de.swk.announcer.meetup;
+package de.swk.announcer.event;
 
 import java.util.Date;
 
 /**
  * @author egga
  */
-public class MeetUp {
+public class Event {
 
     private Date start;
 
