@@ -1,0 +1,40 @@
+{
+  "rsvp_limit": 70,
+  "status": "upcoming",
+  "visibility": "public",
+  "maybe_rsvp_count": 0,
+  "venue": {
+    "id": 21307832,
+    "lon": 13.412317,
+    "repinned": false,
+    "name": "Hypoport",
+    "address_1": "Klosterstr. 71",
+    "lat": 52.517914,
+    "country": "de",
+    "city": "10179 Berlin"
+  },
+  "id": "drnxqkytdbfc",
+  "utc_offset": 3600000,
+  "duration": 9000000,
+  "time": 1424716200000,
+  "waitlist_count": 0,
+  "announced": true,
+  "updated": 1422651411000,
+  "yes_rsvp_count": 45,
+  "created": 1411415510000,
+  "event_url": "http:\/\/www.meetup.com\/Software-Craftsmanship-Berlin\/events\/220066295\/",
+  "description": "<p>We'll have a presentation on language constructs that are less known in mainstream programming. We'll cover features like pattern matching, higher-order functions, type classes, etc. It will be a mix of ideas from different programming paradigms including both OOP and functional programming.<\/p> <p>You are invited to join us and show off a feature you care about. The language and paradigm you prefer do not matter. Bring the laptop and show us something cool.<\/p> <p>If there is time left we can discuss pros and cons of specific features or even try to implement them.<\/p> <p>Although the examples will be (mostly) in Scala, the evening is not Scala-specific, but useful in different programing languages.<\/p> <p>And don't forget to plan some time to join us afterwards for drinks.<\/p>",
+  "how_to_find_us": "Hypoport is located right next to the U-Bahn station Klosterstraße (U2)",
+  "name": "Language Features You Are (Probably) Not Using Enough",
+  "headcount": 0,
+  "group": {
+    "id": 11846642,
+    "created": 1389015574000,
+    "group_lat": 52.52000045776367,
+    "name": "Software Craftsmanship Berlin",
+    "group_lon": 13.380000114440918,
+    "join_mode": "open",
+    "urlname": "Software-Craftsmanship-Berlin",
+    "who": "Members"
+  }
+}

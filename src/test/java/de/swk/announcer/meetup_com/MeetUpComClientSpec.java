@@ -12,9 +12,9 @@ public class MeetUpComClientSpec {
         describe("a client", it -> {
             MeetUpComClient client = new MeetUpComClient();
 
-            it.should("get an event", expect -> {
-                String event = client.fetchEvent();
-                expect.that(event).containsString("\"name\":\"Language Features You Are (Probably) Not Using Enough\"");
+            it.should("be able to fetch an existing event", expect -> {
+                MeetUpComEvent event = client.fetchEvent();
+                expect.that(event.name).equals("Language Features You Are (Probably) Not Using Enough");
             });
 
         });
