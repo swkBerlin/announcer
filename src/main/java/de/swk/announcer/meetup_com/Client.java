@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.swk.announcer.infrastructure.Configuration;
 import de.swk.announcer.meetup_com.network.HttpTransmitter;
 
+import java.io.IOException;
+
 /**
  * @author egga
  */
-public class Client<T> {
+public abstract class Client<T> {
 
     // TODO DI
     private Configuration configuration = new Configuration();
@@ -21,19 +23,17 @@ public class Client<T> {
     private final String authParam = "?key=" + configuration.getMeetUpComApiKey();
 
 
-    protected ObjectMapper getMapper() {
-        return mapper;
-    }
+    // contract
+    protected abstract String getEndpoint();
 
-    protected HttpTransmitter getTransmitter() {
-        return transmitter;
-    }
+    protected abstract Class<T> getEntityClass();
 
-    protected String getHost() {
-        return host;
-    }
 
-    protected  String getAuthParam() {
-        return authParam;
+    // methods
+    public T getById(Integer eventId) throws IOException {
+        String url = host + getEndpoint() + eventId + authParam;
+        String content = transmitter.get(url);
+        T entity = mapper.readValue(content, getEntityClass());
+        return entity;
     }
 }

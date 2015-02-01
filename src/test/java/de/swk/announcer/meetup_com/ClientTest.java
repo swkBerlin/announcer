@@ -18,8 +18,8 @@ public class ClientTest {
 
     @Test
     public void it_should_get_an_existing_resource() {
-        String content = transmitter.get("http://google.com");
-        assertThat(content).contains("Google");
+        String content = transmitter.get("http://httpstat.us/200");
+        assertThat(content).contains("OK");
     }
 
     @Test(expected = ConnectionException.class)

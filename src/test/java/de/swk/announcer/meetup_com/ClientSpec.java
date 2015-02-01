@@ -19,7 +19,7 @@ public class ClientSpec {
             Transmitter client = new Transmitter();
 
             it.should("be able to fetch an existing event", expect -> {
-                Event event = client. fetch(EVENT_ID);
+                Event event = client.getById(EVENT_ID);
                 expect.that(event.name).equals("Language Features You Are (Probably) Not Using Enough");
             });
 
