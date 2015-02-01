@@ -1,4 +1,4 @@
-package de.swk.announcer.meetup_com;
+package de.swk.announcer.meetup_com.events;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * @author egga
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class MeetUpComEvent {
+public class Event {
 
     public String id;
 
