@@ -1,5 +1,6 @@
 package de.swk.announcer.meetup_com.network;
 
+import javax.ws.rs.ProcessingException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
@@ -18,11 +19,15 @@ public class HttpTransmitter {
         WebTarget webTarget = client.target(uri);
         Builder invocationBuilder = webTarget.request(TEXT_PLAIN_TYPE);
 
-        Response response = invocationBuilder.get();
-        if (response.getStatus() != 200) {
-            throw new ConnectionException(response);
-        }
+        try {
+            Response response = invocationBuilder.get();
+            if (response.getStatus() != 200) {
+                throw new ConnectionException();
+            }
 
-        return response.readEntity(String.class);
+            return response.readEntity(String.class);
+        } catch (ProcessingException | IllegalStateException e) {
+            throw new ConnectionException();
+        }
     }
 }
