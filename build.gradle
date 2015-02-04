@@ -1,15 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'spring-boot'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 version = '1.0'
+def appName = 'SWK Announcer'
 jar {
     manifest {
-        attributes 'Implementation-Title': 'SWK Announcer',
+        attributes 'Implementation-Title': appName,
                 'Implementation-Version': version
     }
+    baseName = appName
 }
 
 repositories {
@@ -26,6 +38,8 @@ dependencies {
             'com.fasterxml.jackson.core:jackson-core:2.5.0',
             'com.fasterxml.jackson.core:jackson-annotations:2.5.0',
             'com.fasterxml.jackson.core:jackson-databind:2.5.0',
+            'org.springframework.boot:spring-boot-starter-web:1.2.1.RELEASE',
+            'org.springframework.boot:spring-boot-starter-actuator:1.2.1.RELEASE',
     )
 
     testCompile(
@@ -33,5 +47,6 @@ dependencies {
             'org.assertj:assertj-core:1.7.1',
             'org.mockito:mockito-all:1.10.19',
             'com.insightfullogic:lambda-behave:0.3',
+            'org.springframework.boot:spring-boot-starter-test',
     )
 }
